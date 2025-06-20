@@ -8,7 +8,7 @@ export interface IUser extends Document {
     status: boolean;
     CreateDate: Date;
     deleteDate: Date | null;
-    roles: Types.ObjectId[]; // Cambio aquí
+    roles: Types.ObjectId[];
     firstName: string;
     lastName: string;
 }
@@ -41,7 +41,7 @@ const userSchema = new Schema<IUser>({
         type: Date,
         default: null
     },
-    roles: [{ // Cambio aquí
+    roles: [{ 
         type: Schema.Types.ObjectId,
         ref: 'Rol',
         required: true

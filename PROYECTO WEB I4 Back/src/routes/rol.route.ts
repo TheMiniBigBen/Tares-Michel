@@ -4,11 +4,12 @@ import { getAllRoles, getRolById, createRol, updateRol, deleteRol } from "../con
 
 const router = Router();
 
-router.get("/roles", getAllRoles);
-router.get("/roles/:rolId", getRolById);
-router.post("/roles", createRol);
-router.patch("/roles/:rolId", updateRol);
-router.delete("/roles/:rolId", deleteRol);
+router.get("/", getAllRoles);
+router.get("/:rolId", getRolById);
+router.post("/", createRol);
+router.patch("/:rolId", updateRol);
+router.delete("/:rolId", deleteRol);
+
 
 export default router;
 

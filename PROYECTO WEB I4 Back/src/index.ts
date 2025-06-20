@@ -14,9 +14,10 @@ app.use(morgan('dev'));
 
 // Rutas
 app.use('/api/auth', authRoutes);
-app.use('/api/auth', productRoutes);
-app.use('/api/auth', orderRoutes);
-app.use('/api/auth', rolRoutes);
+app.use('/api/products', productRoutes); // ✅ Aquí debe ir products
+app.use('/api/orders', orderRoutes);     // ✅ Aquí van las órdenes
+app.use('/api/roles', rolRoutes);        // ✅ Aquí van los roles
+
 
 connectDB().then(() => {
   app.listen(PORT, () => {
